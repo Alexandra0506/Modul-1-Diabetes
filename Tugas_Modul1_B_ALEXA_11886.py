@@ -1,18 +1,16 @@
 import streamlit as st
-import pandas as pd
 import pickle
 import os
 
-model_directory = r'C:\Users\Acer\OneDrive\Documents\Tugas cool yeah sekar\SEMESTER 5\Pembelajaran Mesin\Modul 1'
-
-model_path = os.path.join(model_directory, 'rf_diabetes_model.pkl')
+model_path = 'rf_diabetes_model.pkl'
 
 if os.path.exists(model_path):
     try:
         with open(model_path, 'rb') as f:
             loaded_model = pickle.load(f)
 
-        rf_model = loaded_model[0]
+        svm_model = loaded_model[0]  
+        rf_model = loaded_model[1]
 
         st.title("Prediksi Diabetes")
 
